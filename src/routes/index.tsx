@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import logo from "@/assets/logotipo.png.asset.json";
 import expert from "@/assets/expert.jpg.asset.json";
 import bgSunset from "@/assets/bg-sunset.webp.asset.json";
+import bgWedding from "@/assets/bg-wedding.webp.asset.json";
 import { Check, X, Heart, MessageCircle, Sparkles, Shield, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import {
@@ -318,7 +319,7 @@ function ForWhom() {
   ];
   return (
     <section className="relative isolate overflow-hidden py-24 md:py-32">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/10 to-background" aria-hidden />
+      <BgImage src={bgWedding.url} overlay="from-background via-background/90 to-background" />
       <div className="relative mx-auto max-w-5xl px-6">
         <h2 className="text-center text-3xl font-medium md:text-5xl">
           Para quem é <span className="text-gradient-gold italic">— e para quem não é.</span>
