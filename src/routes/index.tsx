@@ -2,8 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import logo from "@/assets/logotipo.png.asset.json";
 import expert from "@/assets/expert.jpg.asset.json";
 import bgSunset from "@/assets/bg-sunset.webp.asset.json";
-import bgHands from "@/assets/bg-hands.webp.asset.json";
-import bgWedding from "@/assets/bg-wedding.webp.asset.json";
 import { Check, X, Heart, MessageCircle, Sparkles, Shield, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import {
@@ -130,7 +128,7 @@ function Problem() {
   ];
   return (
     <section className="relative isolate overflow-hidden py-24 md:py-32">
-      <BgImage src={bgHands.url} overlay="from-background via-background/80 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/10 to-background" aria-hidden />
       <div className="relative mx-auto max-w-3xl px-6">
         <div className="rounded-3xl border border-border bg-card/40 p-8 backdrop-blur-2xl md:p-14">
           <p className="text-sm uppercase tracking-[0.25em] text-gold">O problema</p>
@@ -172,7 +170,7 @@ function Solution() {
   ];
   return (
     <section className="relative isolate overflow-hidden py-24 md:py-32">
-      <BgImage src={bgWedding.url} overlay="from-background/95 via-background/85 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-gold/[0.03] to-background" aria-hidden />
       <BlurOrbs />
       <div className="relative mx-auto max-w-5xl px-6">
         <div className="text-center">
@@ -203,7 +201,7 @@ function Different() {
   const pillars = ["Valores", "Propósito", "Intimidade", "Finanças", "Filhos", "Rotina", "Famílias de origem", "Responsabilidades", "Crescimento individual e conjunto"];
   return (
     <section className="relative isolate overflow-hidden py-24 md:py-32">
-      <BgImage src={bgSunset.url} overlay="from-background via-background/90 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/10 to-background" aria-hidden />
       <div className="relative mx-auto max-w-4xl px-6">
         <div className="rounded-3xl border border-gold/20 bg-card/40 p-8 backdrop-blur-2xl md:p-14">
           <p className="text-sm uppercase tracking-[0.25em] text-gold">O que torna diferente</p>
@@ -254,7 +252,7 @@ function Testimonials() {
   }, [api]);
   return (
     <section className="relative isolate overflow-hidden py-24 md:py-32">
-      <BgImage src={bgHands.url} overlay="from-background via-background/85 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-gold/[0.03] to-background" aria-hidden />
       <div className="relative mx-auto max-w-5xl px-6">
         <div className="text-center">
           <p className="text-sm uppercase tracking-[0.25em] text-gold">Casais que viveram a jornada</p>
@@ -320,7 +318,7 @@ function ForWhom() {
   ];
   return (
     <section className="relative isolate overflow-hidden py-24 md:py-32">
-      <BgImage src={bgWedding.url} overlay="from-background via-background/90 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/10 to-background" aria-hidden />
       <div className="relative mx-auto max-w-5xl px-6">
         <h2 className="text-center text-3xl font-medium md:text-5xl">
           Para quem é <span className="text-gradient-gold italic">— e para quem não é.</span>
@@ -365,7 +363,7 @@ function Modules() {
   ];
   return (
     <section className="relative isolate overflow-hidden py-24 md:py-32">
-      <BgImage src={bgSunset.url} overlay="from-background via-background/85 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-gold/[0.03] to-background" aria-hidden />
       <BlurOrbs />
       <div className="relative mx-auto max-w-6xl px-6">
         <div className="text-center">
@@ -398,7 +396,6 @@ function Modules() {
 function FinalCTA() {
   return (
     <section id="checkout" className="relative isolate overflow-hidden py-24 md:py-32">
-      <BgImage src={bgWedding.url} overlay="from-background/80 via-background/70 to-background" />
       <div className="relative mx-auto max-w-3xl px-6 text-center">
         <div className="rounded-3xl border border-gold/30 bg-card/50 p-10 backdrop-blur-2xl md:p-14 shadow-[var(--shadow-gold)]">
           <h2 className="text-balance text-3xl font-medium leading-tight md:text-5xl">
@@ -423,7 +420,7 @@ function FinalCTA() {
 function Author() {
   return (
     <section className="relative isolate overflow-hidden py-24 md:py-32">
-      <BgImage src={bgHands.url} overlay="from-background via-background/90 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/10 to-background" aria-hidden />
       <BlurOrbs />
       <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-2 md:gap-16">
         <div className="relative mx-auto w-full max-w-md">
@@ -453,7 +450,7 @@ function Author() {
 function Guarantee() {
   return (
     <section className="relative isolate overflow-hidden py-24">
-      <BgImage src={bgSunset.url} overlay="from-background via-background/90 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-gold/[0.03] to-background" aria-hidden />
       <div className="relative mx-auto max-w-3xl px-6">
         <div className="rounded-3xl border border-gold/40 bg-card/50 p-10 text-center backdrop-blur-2xl">
           <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full" style={{ background: "var(--gradient-gold)" }}>
@@ -485,7 +482,7 @@ function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
     <section className="relative isolate overflow-hidden py-24 md:py-32">
-      <BgImage src={bgHands.url} overlay="from-background via-background/90 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/10 to-background" aria-hidden />
       <div className="relative mx-auto max-w-3xl px-6">
         <div className="text-center">
           <p className="text-sm uppercase tracking-[0.25em] text-gold">FAQ</p>
