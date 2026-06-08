@@ -322,7 +322,7 @@ function ForWhom() {
       <BgImage src={bgForWhom.url} overlay="from-background/40 via-background/50 to-background/70" />
       <div className="relative mx-auto max-w-5xl px-6">
         <h2 className="text-center text-3xl font-medium md:text-5xl">
-          Para quem é <span className="text-gradient-gold italic">— e para quem não é.</span>
+          Para quem é <span className="text-gradient-gold italic">- e para quem não é.</span>
         </h2>
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           <div className="rounded-3xl border border-destructive/30 bg-card/40 p-8 backdrop-blur-2xl">
