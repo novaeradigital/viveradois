@@ -2,8 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import logo from "@/assets/logotipo.png.asset.json";
 import expert from "@/assets/expert.jpg.asset.json";
 import bgSunset from "@/assets/bg-sunset.webp.asset.json";
-import bgHands from "@/assets/bg-hands.webp.asset.json";
-import bgWedding from "@/assets/bg-wedding.webp.asset.json";
 import { Check, X, Heart, MessageCircle, Sparkles, Shield, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import {
