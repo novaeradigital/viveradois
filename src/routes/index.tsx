@@ -319,7 +319,7 @@ function ForWhom() {
   ];
   return (
     <section className="relative isolate overflow-hidden py-24 md:py-32">
-      <BgImage src={bgWedding.url} overlay="from-background via-background/90 to-background" />
+      <BgImage src={bgWedding.url} overlay="from-background/40 via-background/50 to-background/70" />
       <div className="relative mx-auto max-w-5xl px-6">
         <h2 className="text-center text-3xl font-medium md:text-5xl">
           Para quem é <span className="text-gradient-gold italic">— e para quem não é.</span>
