@@ -5,7 +5,15 @@ import bgSunset from "@/assets/bg-sunset.webp.asset.json";
 import bgHands from "@/assets/bg-hands.webp.asset.json";
 import bgWedding from "@/assets/bg-wedding.webp.asset.json";
 import { Check, X, Heart, MessageCircle, Sparkles, Shield, ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -229,6 +237,21 @@ function Testimonials() {
     "Recuperamos a conexão que tínhamos perdido.",
     "O curso nos ajudou mais do que anos tentando resolver sozinhos.",
   ];
+  const [api, setApi] = useState<CarouselApi | null>(null);
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    if (!api) return;
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap());
+    const onSelect = () => setCurrent(api.selectedScrollSnap());
+    api.on("select", onSelect);
+    const id = setInterval(() => api.scrollNext(), 5000);
+    return () => {
+      api.off("select", onSelect);
+      clearInterval(id);
+    };
+  }, [api]);
   return (
     <section className="relative isolate overflow-hidden py-24 md:py-32">
       <BgImage src={bgHands.url} overlay="from-background via-background/85 to-background" />
@@ -239,16 +262,38 @@ function Testimonials() {
             Histórias que <span className="text-gradient-gold italic">se reencontraram.</span>
           </h2>
         </div>
-        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {items.map((t, i) => (
-            <figure key={t} className={`rounded-2xl border border-border bg-card/50 p-6 backdrop-blur-xl ${i === 2 ? "lg:col-start-2" : ""}`}>
-              <MessageCircle className="h-5 w-5 text-gold" />
-              <blockquote className="mt-3 text-lg leading-snug font-display italic text-foreground/90">
-                "{t}"
-              </blockquote>
-              <figcaption className="mt-4 text-xs uppercase tracking-widest text-muted-foreground">Casal Viver a Dois</figcaption>
-            </figure>
-          ))}
+        <div className="mt-12 px-12">
+          <Carousel
+            setApi={setApi}
+            opts={{ loop: true, align: "start" }}
+            className="w-full"
+          >
+            <CarouselContent>
+              {items.map((t) => (
+                <CarouselItem key={t} className="md:basis-1/2 lg:basis-1/3">
+                  <figure className="h-full rounded-2xl border border-gold/20 bg-card/50 p-8 backdrop-blur-xl shadow-[var(--shadow-gold)]">
+                    <MessageCircle className="h-6 w-6 text-gold" />
+                    <blockquote className="mt-4 text-lg leading-snug font-display italic text-foreground/95">
+                      "{t}"
+                    </blockquote>
+                    <figcaption className="mt-6 text-xs uppercase tracking-widest text-muted-foreground">Casal Viver a Dois</figcaption>
+                  </figure>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="border-gold/40 bg-background/60 text-gold backdrop-blur-md hover:bg-gold hover:text-primary-foreground" />
+            <CarouselNext className="border-gold/40 bg-background/60 text-gold backdrop-blur-md hover:bg-gold hover:text-primary-foreground" />
+          </Carousel>
+          <div className="mt-8 flex justify-center gap-2">
+            {Array.from({ length: count }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => api?.scrollTo(i)}
+                aria-label={`Ir para depoimento ${i + 1}`}
+                className={`h-1.5 rounded-full transition-all ${i === current ? "w-8 bg-gold" : "w-2 bg-gold/30"}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -379,10 +424,15 @@ function Author() {
   return (
     <section className="relative isolate overflow-hidden py-24 md:py-32">
       <BgImage src={bgHands.url} overlay="from-background via-background/90 to-background" />
-      <div className="relative mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-[auto,1fr] md:items-center">
-        <div className="relative mx-auto w-full max-w-sm">
-          <div className="absolute -inset-4 rounded-3xl bg-gold/20 blur-2xl" aria-hidden />
-          <img src={expert.url} alt="Priscilla Collela" className="relative rounded-3xl border border-gold/30 shadow-[var(--shadow-gold)]" />
+      <BlurOrbs />
+      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-2 md:gap-16">
+        <div className="relative mx-auto w-full max-w-md">
+          <div className="absolute -inset-6 rounded-[2rem] bg-gold/25 blur-3xl" aria-hidden />
+          <img
+            src={expert.url}
+            alt="Priscilla Collela"
+            className="relative w-full rounded-3xl border border-gold/30 shadow-[var(--shadow-gold)]"
+          />
         </div>
         <div>
           <p className="text-sm uppercase tracking-[0.25em] text-gold">Quem conduz</p>
