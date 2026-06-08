@@ -181,7 +181,7 @@ function Solution() {
           </h2>
         </div>
         <p className="mx-auto mt-8 max-w-2xl text-center text-lg text-muted-foreground">
-          Vocês serão guiados por uma jornada estruturada para compreender os verdadeiros núcleos de atrito da relação e farão exercícios práticos para reconstruir o vínculo. Tudo isso através de uma abordagem terapêutica real, baseada no método sistêmico e transpessoal utilizado pela terapeuta Priscilla.
+          Vocês serão guiados por uma jornada estruturada para compreender os verdadeiros núcleos de atrito da relação e farão exercícios práticos para reconstruir o vínculo. Tudo isso através de uma abordagem terapêutica real, baseada no método sistêmico e transpessoal utilizado pela psicóloga Priscilla.
         </p>
         <ul className="mx-auto mt-12 grid max-w-3xl gap-3 md:grid-cols-2">
           {benefits.map((b) => (
@@ -440,7 +440,7 @@ function Author() {
           <p className="mt-2 text-lg text-muted-foreground">Psicóloga clínica com ênfase em terapia de casais.</p>
           <div className="mt-6 space-y-4 text-foreground/85">
             <p>Ao longo de <strong className="text-gold">23 anos</strong> de atendimento, Priscilla observou que muitos casais buscavam ajuda apenas quando a relação já estava profundamente desgastada — e que muitos não tinham condições financeiras de manter um processo terapêutico contínuo.</p>
-            <p>Então ela e seu marido <strong>João Rafael</strong> (também terapeuta) criaram o Viver a Dois, para levar os principais fundamentos trabalhados em consultório para um formato acessível, estruturado e aplicável dentro da própria casa.</p>
+            <p>Então ela e seu marido <strong>João Rafael</strong> (também psicólogo) criaram o Viver a Dois, para levar os principais fundamentos trabalhados em consultório para um formato acessível, estruturado e aplicável dentro da própria casa.</p>
           </div>
         </div>
       </div>
