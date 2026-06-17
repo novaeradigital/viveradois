@@ -3,6 +3,16 @@ import logo from "@/assets/logotipo.png.asset.json";
 import expert from "@/assets/expert.jpg.asset.json";
 import bgSunset from "@/assets/bg-sunset.webp.asset.json";
 import bgForWhom from "@/assets/bg-forwhom.webp.asset.json";
+import dep1 from "@/assets/depoimentos/depoimento-1.webp.asset.json";
+import dep2 from "@/assets/depoimentos/depoimento-2.webp.asset.json";
+import dep3 from "@/assets/depoimentos/depoimento-3.webp.asset.json";
+import dep4 from "@/assets/depoimentos/depoimento-4.webp.asset.json";
+import dep5 from "@/assets/depoimentos/depoimento-5.webp.asset.json";
+import dep6 from "@/assets/depoimentos/depoimento-6.webp.asset.json";
+import dep7 from "@/assets/depoimentos/depoimento-7.webp.asset.json";
+import dep8 from "@/assets/depoimentos/depoimento-8.webp.asset.json";
+import dep9 from "@/assets/depoimentos/depoimento-9.webp.asset.json";
+import dep10 from "@/assets/depoimentos/depoimento-10.webp.asset.json";
 import { Check, X, Heart, MessageCircle, Sparkles, Shield, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import {
@@ -240,11 +250,16 @@ function Different() {
 
 function Testimonials() {
   const items = [
-    "Melhoramos nossa comunicação.",
-    "Voltamos a conversar sem brigar.",
-    "Aprendemos a tomar decisões juntos.",
-    "Recuperamos a conexão que tínhamos perdido.",
-    "O curso nos ajudou mais do que anos tentando resolver sozinhos.",
+    { src: dep1.url, name: "Maria Clara" },
+    { src: dep2.url, name: "Rosangele" },
+    { src: dep3.url, name: "Marlene" },
+    { src: dep4.url, name: "Patricia" },
+    { src: dep5.url, name: "Cidinha" },
+    { src: dep6.url, name: "João Carlos" },
+    { src: dep7.url, name: "Luiz Neto" },
+    { src: dep8.url, name: "José Roberto" },
+    { src: dep9.url, name: "Marcio" },
+    { src: dep10.url, name: "Edson Bernardes" },
   ];
   const [api, setApi] = useState<CarouselApi | null>(null);
   const [current, setCurrent] = useState(0);
@@ -279,13 +294,14 @@ function Testimonials() {
           >
             <CarouselContent>
               {items.map((t) => (
-                <CarouselItem key={t} className="md:basis-1/2 lg:basis-1/3">
-                  <figure className="h-full rounded-2xl border border-gold/20 bg-card/50 p-8 backdrop-blur-xl shadow-[var(--shadow-gold)]">
-                    <MessageCircle className="h-6 w-6 text-gold" />
-                    <blockquote className="mt-4 text-lg leading-snug font-display italic text-foreground/95">
-                      "{t}"
-                    </blockquote>
-                    <figcaption className="mt-6 text-xs uppercase tracking-widest text-muted-foreground">Casal Viver a Dois</figcaption>
+                <CarouselItem key={t.name} className="md:basis-1/2 lg:basis-1/3">
+                  <figure className="h-full rounded-2xl border border-gold/20 bg-card/50 p-3 backdrop-blur-xl shadow-[var(--shadow-gold)]">
+                    <img
+                      src={t.src}
+                      alt={`Depoimento de ${t.name} sobre o curso Viver a Dois`}
+                      loading="lazy"
+                      className="w-full rounded-xl"
+                    />
                   </figure>
                 </CarouselItem>
               ))}
