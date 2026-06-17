@@ -120,7 +120,7 @@ function Hero() {
         </div>
         <div className="mt-10 flex flex-col items-center gap-3">
           <GoldButton>QUERO COMEÇAR AGORA</GoldButton>
-          <p className="text-sm text-muted-foreground">12x de R$97 ou R$997 à vista</p>
+          <p className="text-sm text-muted-foreground">12x de R$103,11 ou R$997 à vista</p>
           <p className="text-xs uppercase tracking-widest text-gold/80">
             <Shield className="mr-1 inline h-3.5 w-3.5" /> Garantia incondicional de 7 dias
           </p>
@@ -417,7 +417,7 @@ function FinalCTA() {
           </p>
           <div className="mt-10 flex flex-col items-center gap-3">
             <GoldButton>QUERO TRANSFORMAR MEU RELACIONAMENTO</GoldButton>
-            <p className="text-sm text-foreground/80">12x de R$97 ou R$997 à vista</p>
+            <p className="text-sm text-foreground/80">12x de R$103,11 ou R$997 à vista</p>
           </div>
           <p className="mt-8 text-sm text-muted-foreground">
             Comecem hoje. Vocês terão 7 dias para assistir às aulas e decidir se o programa faz sentido. Se não fizer, basta solicitar o reembolso. <span className="text-gold">Sem riscos.</span>
@@ -519,7 +519,7 @@ function FAQ() {
         </div>
         <div className="mt-16 text-center">
           <GoldButton>QUERO COMEÇAR AGORA</GoldButton>
-          <p className="mt-3 text-sm text-muted-foreground">12x de R$97 · Garantia de 7 dias</p>
+          <p className="mt-3 text-sm text-muted-foreground">12x de R$103,11 · Garantia de 7 dias</p>
         </div>
       </div>
     </section>
