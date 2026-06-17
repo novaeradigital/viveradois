@@ -432,7 +432,7 @@ function FinalCTA() {
             Precisam de um caminho claro para reconstruir aquilo que está se perdendo.
           </p>
           <div className="mt-10 flex flex-col items-center gap-3">
-            <GoldButton>QUERO TRANSFORMAR MEU RELACIONAMENTO</GoldButton>
+            <GoldButton href="https://pay.kiwify.com.br/U4QDdxM">QUERO TRANSFORMAR MEU RELACIONAMENTO</GoldButton>
             <p className="text-sm text-foreground/80">12x de R$103,11 ou R$997 à vista</p>
           </div>
           <p className="mt-8 text-sm text-muted-foreground">
