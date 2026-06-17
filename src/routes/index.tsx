@@ -103,7 +103,7 @@ function Hero() {
           O relacionamento <span className="text-gradient-gold italic">não melhora</span> sozinho.
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-balance text-lg text-muted-foreground md:text-xl">
-          Ele melhora quando duas pessoas aprendem a construir a mesma direção.
+          - e para quem não é.
         </p>
         <p className="mx-auto mt-8 max-w-3xl text-base text-foreground/80 md:text-lg">
           <strong className="text-foreground">Viver a Dois</strong> é uma jornada guiada para casais que desejam reconstruir a comunicação, fortalecer a conexão emocional, resolver os principais conflitos da convivência e criar um propósito comum para a vida a dois — mesmo que hoje o relacionamento esteja desgastado, distante ou perdido.
