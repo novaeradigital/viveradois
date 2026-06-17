@@ -105,9 +105,6 @@ function Hero() {
         <p className="mx-auto mt-6 max-w-2xl text-balance text-lg text-muted-foreground md:text-xl">
           Ele melhora quando duas pessoas aprendem a construir a mesma direção.
         </p>
-        <p className="mx-auto mt-8 max-w-3xl text-base text-foreground/80 md:text-lg">
-          <strong className="text-foreground">Viver a Dois</strong> é uma jornada guiada para casais que desejam reconstruir a comunicação, fortalecer a conexão emocional, resolver os principais conflitos da convivência e criar um propósito comum para a vida a dois — mesmo que hoje o relacionamento esteja desgastado, distante ou perdido.
-        </p>
         <div className="mx-auto mt-8 w-full max-w-3xl aspect-video rounded-2xl overflow-hidden border border-gold/30 shadow-[var(--shadow-gold)]">
           <iframe
             className="w-full h-full"
