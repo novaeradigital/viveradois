@@ -447,6 +447,7 @@ function Author() {
           <h2 className="mt-3 text-4xl font-medium md:text-5xl">
             <span className="text-gradient-gold">Priscilla Collela</span>
           </h2>
+          <p className="mt-1 text-sm text-gold/80">CRP 06/70489</p>
           <p className="mt-2 text-lg text-muted-foreground">Psicóloga clínica com ênfase em terapia de casais.</p>
           <div className="mt-6 space-y-4 text-foreground/85">
             <p>Ao longo de <strong className="text-gold">23 anos</strong> de atendimento, Priscilla observou que muitos casais buscavam ajuda apenas quando a relação já estava profundamente desgastada — e que muitos não tinham condições financeiras de manter um processo terapêutico contínuo.</p>
