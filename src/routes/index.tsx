@@ -118,6 +118,9 @@ function Hero() {
             allowFullScreen
           />
         </div>
+        <p className="mx-auto mt-6 max-w-3xl text-base text-foreground/80 md:text-lg">
+          Viver a Dois é uma jornada guiada para casais que desejam reconstruir a comunicação, fortalecer a conexão emocional, resolver os principais conflitos da convivência e criar um propósito comum para a vida a dois — mesmo que hoje o relacionamento esteja desgastado, distante ou perdido.
+        </p>
         <div className="mt-10 flex flex-col items-center gap-3">
           <GoldButton>QUERO COMEÇAR AGORA</GoldButton>
           <p className="text-sm text-muted-foreground">12x de R$103,11 ou R$997 à vista</p>
