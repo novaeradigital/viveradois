@@ -108,6 +108,16 @@ function Hero() {
         <p className="mx-auto mt-8 max-w-3xl text-base text-foreground/80 md:text-lg">
           <strong className="text-foreground">Viver a Dois</strong> é uma jornada guiada para casais que desejam reconstruir a comunicação, fortalecer a conexão emocional, resolver os principais conflitos da convivência e criar um propósito comum para a vida a dois — mesmo que hoje o relacionamento esteja desgastado, distante ou perdido.
         </p>
+        <div className="mx-auto mt-8 w-full max-w-3xl aspect-video rounded-2xl overflow-hidden border border-gold/30 shadow-[var(--shadow-gold)]">
+          <iframe
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/SDzwyMpACE0"
+            title="Vídeo de apresentação Viver a Dois"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        </div>
         <div className="mt-10 flex flex-col items-center gap-3">
           <GoldButton>QUERO COMEÇAR AGORA</GoldButton>
           <p className="text-sm text-muted-foreground">12x de R$97 ou R$997 à vista</p>
