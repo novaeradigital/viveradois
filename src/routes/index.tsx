@@ -467,7 +467,7 @@ function Author() {
           <p className="mt-2 text-lg text-muted-foreground">Psicóloga clínica com ênfase em terapia de casais.</p>
           <div className="mt-6 space-y-4 text-foreground/85">
             <p>Ao longo de <strong className="text-gold">23 anos</strong> de atendimento, Priscilla observou que muitos casais buscavam ajuda apenas quando a relação já estava profundamente desgastada — e que muitos não tinham condições financeiras de manter um processo terapêutico contínuo.</p>
-            <p>Então ela e seu marido <strong>João Rafael</strong> (também psicólogo) criaram o Viver a Dois, para levar os principais fundamentos trabalhados em consultório para um formato acessível, estruturado e aplicável dentro da própria casa.</p>
+            <p>Então ela e seu marido <strong>João Rafael</strong>, Terapeuta Junguiano criaram o Viver a Dois, para levar os principais fundamentos trabalhados em consultório para um formato acessível, estruturado e aplicável dentro da própria casa.</p>
           </div>
         </div>
       </div>
