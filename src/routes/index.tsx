@@ -461,7 +461,7 @@ function Author() {
           <img
             src={joaoRafael.url}
             alt="João Rafael"
-            className="absolute -bottom-4 -right-4 w-1/2 rounded-2xl border-2 border-gold/40 shadow-lg"
+            className="absolute -bottom-4 -right-4 w-1/2 rounded-2xl"
           />
         </div>
         <div>
