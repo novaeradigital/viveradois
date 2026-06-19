@@ -105,8 +105,8 @@ function Hero() {
     <section className="relative isolate overflow-hidden">
       <BgImage src={bgSunset.url} overlay="from-background/70 via-background/80 to-background" />
       <BlurOrbs />
-      <div className="relative mx-auto max-w-5xl px-6 pt-12 pb-24 text-center md:pt-20 md:pb-32">
-        <img src={logo.url} alt="Viver a Dois" className="mx-auto h-28 md:h-36 w-auto" />
+      <div className="relative mx-auto max-w-5xl px-6 pt-6 pb-24 text-center md:pt-10 md:pb-32">
+        
         <div className="mt-10 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-background/40 px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-gold backdrop-blur-md">
           <Heart className="h-3.5 w-3.5" /> Construindo um relacionamento maduro
         </div>
