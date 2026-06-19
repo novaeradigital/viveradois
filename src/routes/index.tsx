@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import logo from "@/assets/logotipo.png.asset.json";
 import expert from "@/assets/expert.jpg.asset.json";
+import joaoRafael from "@/assets/joao-rafael.png.asset.json";
 import bgSunset from "@/assets/bg-sunset.webp.asset.json";
 import bgForWhom from "@/assets/bg-forwhom.webp.asset.json";
 import dep1 from "@/assets/depoimentos/depoimento-1.webp.asset.json";
