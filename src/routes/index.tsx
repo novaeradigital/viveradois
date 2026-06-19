@@ -14,7 +14,7 @@ import dep7 from "@/assets/depoimentos/depoimento-7.webp.asset.json";
 import dep8 from "@/assets/depoimentos/depoimento-8.webp.asset.json";
 import dep9 from "@/assets/depoimentos/depoimento-9.webp.asset.json";
 import dep10 from "@/assets/depoimentos/depoimento-10.webp.asset.json";
-import { Check, X, Heart, MessageCircle, Sparkles, Shield, ChevronDown } from "lucide-react";
+import { Check, X, MessageCircle, Sparkles, Shield, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import {
   Carousel,
@@ -106,10 +106,6 @@ function Hero() {
       <BgImage src={bgSunset.url} overlay="from-background/70 via-background/80 to-background" />
       <BlurOrbs />
       <div className="relative mx-auto max-w-5xl px-6 pt-6 pb-24 text-center md:pt-10 md:pb-32">
-        
-        <div className="mt-10 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-background/40 px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-gold backdrop-blur-md">
-          <Heart className="h-3.5 w-3.5" /> Construindo um relacionamento maduro
-        </div>
         <h1 className="mt-8 text-balance text-4xl font-medium leading-[1.05] md:text-6xl lg:text-7xl">
           O relacionamento <span className="text-gradient-gold italic">não melhora</span> sozinho.
         </h1>
