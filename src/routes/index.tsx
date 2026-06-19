@@ -14,7 +14,7 @@ import dep7 from "@/assets/depoimentos/depoimento-7.webp.asset.json";
 import dep8 from "@/assets/depoimentos/depoimento-8.webp.asset.json";
 import dep9 from "@/assets/depoimentos/depoimento-9.webp.asset.json";
 import dep10 from "@/assets/depoimentos/depoimento-10.webp.asset.json";
-import { Check, X, Heart, MessageCircle, Sparkles, Shield, ChevronDown } from "lucide-react";
+import { Check, X, MessageCircle, Sparkles, Shield, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import {
   Carousel,
