@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import logo from "@/assets/logotipo.png.asset.json";
 import expert from "@/assets/expert.jpg.asset.json";
+import joaoRafael from "@/assets/joao-rafael.png.asset.json";
 import bgSunset from "@/assets/bg-sunset.webp.asset.json";
 import bgForWhom from "@/assets/bg-forwhom.webp.asset.json";
 import dep1 from "@/assets/depoimentos/depoimento-1.webp.asset.json";
@@ -456,6 +457,11 @@ function Author() {
             src={expert.url}
             alt="Priscilla Collela"
             className="relative w-full rounded-3xl border border-gold/30 shadow-[var(--shadow-gold)]"
+          />
+          <img
+            src={joaoRafael.url}
+            alt="João Rafael"
+            className="absolute -bottom-4 -right-4 w-1/2 rounded-2xl border-2 border-gold/40 shadow-lg"
           />
         </div>
         <div>
