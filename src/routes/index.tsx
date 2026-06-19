@@ -458,6 +458,11 @@ function Author() {
             alt="Priscilla Collela"
             className="relative w-full rounded-3xl border border-gold/30 shadow-[var(--shadow-gold)]"
           />
+          <img
+            src={joaoRafael.url}
+            alt="João Rafael"
+            className="absolute -bottom-4 -right-4 w-1/2 rounded-2xl border-2 border-gold/40 shadow-lg"
+          />
         </div>
         <div>
           <p className="text-sm uppercase tracking-[0.25em] text-gold">Quem conduz</p>
