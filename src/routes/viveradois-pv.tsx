@@ -25,7 +25,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/viveradois-pv")({
   head: () => ({
     meta: [
       { title: "Viver a Dois — Construindo um Relacionamento Maduro" },
