@@ -9,8 +9,14 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VadObgRouteImport } from './routes/vad-obg'
 import { Route as IndexRouteImport } from './routes/index'
 
+const VadObgRoute = VadObgRouteImport.update({
+  id: '/vad-obg',
+  path: '/vad-obg',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +25,39 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/vad-obg': typeof VadObgRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/vad-obg': typeof VadObgRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/vad-obg': typeof VadObgRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/vad-obg'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/vad-obg'
+  id: '__root__' | '/' | '/vad-obg'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  VadObgRoute: typeof VadObgRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/vad-obg': {
+      id: '/vad-obg'
+      path: '/vad-obg'
+      fullPath: '/vad-obg'
+      preLoaderRoute: typeof VadObgRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +70,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  VadObgRoute: VadObgRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
