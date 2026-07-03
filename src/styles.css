@@ -1,6 +1,16 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import "@fontsource/nunito/400.css";
+@import "@fontsource/nunito/600.css";
+@import "@fontsource/nunito/700.css";
+@import "@fontsource/nunito/800.css";
+@import "@fontsource/plus-jakarta-sans/400.css";
+@import "@fontsource/plus-jakarta-sans/500.css";
+@import "@fontsource/plus-jakarta-sans/600.css";
+@import "@fontsource/poppins/400.css";
+@import "@fontsource/poppins/500.css";
+@import "@fontsource/poppins/600.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -64,6 +74,20 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Mapa da Autoestima brand tokens (scoped usage on /cdd-p-web) */
+  --color-mapa-cream: var(--mapa-cream);
+  --color-mapa-sunset: var(--mapa-sunset);
+  --color-mapa-lavender: var(--mapa-lavender);
+  --color-mapa-pink: var(--mapa-pink);
+  --color-mapa-rose: var(--mapa-rose);
+  --color-mapa-purple: var(--mapa-purple);
+  --color-mapa-lime: var(--mapa-lime);
+  --color-mapa-wine: var(--mapa-wine);
+  --color-mapa-magenta: var(--mapa-magenta);
+  --color-mapa-glow: var(--mapa-glow);
+  --font-heading: "Plus Jakarta Sans", sans-serif;
+  --font-body: "Poppins", sans-serif;
 }
 
 :root {
@@ -106,6 +130,18 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+
+  /* Mapa da Autoestima brand colors */
+  --mapa-cream: #fcf5eb;
+  --mapa-sunset: #f5cd99;
+  --mapa-lavender: #fbdae5;
+  --mapa-pink: #f28bc0;
+  --mapa-rose: #c53771;
+  --mapa-purple: #8d3fc1;
+  --mapa-lime: #d6f21f;
+  --mapa-wine: #6b1f4a;
+  --mapa-magenta: #ec168f;
+  --mapa-glow: #fff7c2;
 }
 
 .dark {
@@ -166,4 +202,22 @@
     background-clip: text;
     color: transparent;
   }
+}
+
+@utility gradient-rose {
+  background: linear-gradient(135deg, var(--mapa-pink), var(--mapa-magenta), var(--mapa-rose));
+}
+
+@utility gradient-purple-rose {
+  background: linear-gradient(135deg, #7b3fbd, #9638cc, var(--mapa-rose));
+}
+
+@utility gradient-glow {
+  background: radial-gradient(circle at center, var(--mapa-glow), var(--mapa-sunset), transparent 70%);
+}
+
+@utility glass-card {
+  background: color-mix(in srgb, var(--mapa-cream) 85%, transparent);
+  backdrop-filter: blur(12px);
+  border: 1px solid color-mix(in srgb, var(--mapa-lavender) 60%, transparent);
 }
