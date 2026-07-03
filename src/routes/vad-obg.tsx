@@ -138,7 +138,7 @@ function Together() {
     <section className="relative isolate overflow-hidden py-16 md:py-24">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-gold/[0.03] to-background" aria-hidden />
       <div className="relative mx-auto max-w-3xl px-6 text-center">
-        <p className="text-sm uppercase tracking-[0.25em] text-gold">Importeer important</p>
+        <p className="text-sm uppercase tracking-[0.25em] text-gold">Importante</p>
         <h2 className="mt-4 text-2xl font-medium md:text-4xl">
           Façam essa jornada <span className="text-gradient-gold italic">juntos</span>
         </h2>
