@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VadObgRouteImport } from './routes/vad-obg'
+import { Route as CddPWebRouteImport } from './routes/cdd-p-web'
 import { Route as IndexRouteImport } from './routes/index'
 
 const VadObgRoute = VadObgRouteImport.update({
   id: '/vad-obg',
   path: '/vad-obg',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CddPWebRoute = CddPWebRouteImport.update({
+  id: '/cdd-p-web',
+  path: '/cdd-p-web',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,27 +31,31 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cdd-p-web': typeof CddPWebRoute
   '/vad-obg': typeof VadObgRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cdd-p-web': typeof CddPWebRoute
   '/vad-obg': typeof VadObgRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cdd-p-web': typeof CddPWebRoute
   '/vad-obg': typeof VadObgRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/vad-obg'
+  fullPaths: '/' | '/cdd-p-web' | '/vad-obg'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/vad-obg'
-  id: '__root__' | '/' | '/vad-obg'
+  to: '/' | '/cdd-p-web' | '/vad-obg'
+  id: '__root__' | '/' | '/cdd-p-web' | '/vad-obg'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CddPWebRoute: typeof CddPWebRoute
   VadObgRoute: typeof VadObgRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/vad-obg'
       fullPath: '/vad-obg'
       preLoaderRoute: typeof VadObgRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cdd-p-web': {
+      id: '/cdd-p-web'
+      path: '/cdd-p-web'
+      fullPath: '/cdd-p-web'
+      preLoaderRoute: typeof CddPWebRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,8 +87,19 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CddPWebRoute: CddPWebRoute,
   VadObgRoute: VadObgRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
