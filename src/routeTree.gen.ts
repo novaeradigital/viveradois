@@ -10,7 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ViveradoisPvRouteImport } from './routes/viveradois-pv'
-import { Route as VadObgRouteImport } from './routes/vad-obg'
+import { Route as ViveradoisPoRouteImport } from './routes/viveradois-po'
 import { Route as CddPWebRouteImport } from './routes/cdd-p-web'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -19,9 +19,9 @@ const ViveradoisPvRoute = ViveradoisPvRouteImport.update({
   path: '/viveradois-pv',
   getParentRoute: () => rootRouteImport,
 } as any)
-const VadObgRoute = VadObgRouteImport.update({
-  id: '/vad-obg',
-  path: '/vad-obg',
+const ViveradoisPoRoute = ViveradoisPoRouteImport.update({
+  id: '/viveradois-po',
+  path: '/viveradois-po',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CddPWebRoute = CddPWebRouteImport.update({
@@ -38,34 +38,34 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/cdd-p-web': typeof CddPWebRoute
-  '/vad-obg': typeof VadObgRoute
+  '/viveradois-po': typeof ViveradoisPoRoute
   '/viveradois-pv': typeof ViveradoisPvRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cdd-p-web': typeof CddPWebRoute
-  '/vad-obg': typeof VadObgRoute
+  '/viveradois-po': typeof ViveradoisPoRoute
   '/viveradois-pv': typeof ViveradoisPvRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/cdd-p-web': typeof CddPWebRoute
-  '/vad-obg': typeof VadObgRoute
+  '/viveradois-po': typeof ViveradoisPoRoute
   '/viveradois-pv': typeof ViveradoisPvRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/cdd-p-web' | '/vad-obg' | '/viveradois-pv'
+  fullPaths: '/' | '/cdd-p-web' | '/viveradois-po' | '/viveradois-pv'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/cdd-p-web' | '/vad-obg' | '/viveradois-pv'
-  id: '__root__' | '/' | '/cdd-p-web' | '/vad-obg' | '/viveradois-pv'
+  to: '/' | '/cdd-p-web' | '/viveradois-po' | '/viveradois-pv'
+  id: '__root__' | '/' | '/cdd-p-web' | '/viveradois-po' | '/viveradois-pv'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CddPWebRoute: typeof CddPWebRoute
-  VadObgRoute: typeof VadObgRoute
+  ViveradoisPoRoute: typeof ViveradoisPoRoute
   ViveradoisPvRoute: typeof ViveradoisPvRoute
 }
 
@@ -78,11 +78,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ViveradoisPvRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/vad-obg': {
-      id: '/vad-obg'
-      path: '/vad-obg'
-      fullPath: '/vad-obg'
-      preLoaderRoute: typeof VadObgRouteImport
+    '/viveradois-po': {
+      id: '/viveradois-po'
+      path: '/viveradois-po'
+      fullPath: '/viveradois-po'
+      preLoaderRoute: typeof ViveradoisPoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cdd-p-web': {
@@ -105,7 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CddPWebRoute: CddPWebRoute,
-  VadObgRoute: VadObgRoute,
+  ViveradoisPoRoute: ViveradoisPoRoute,
   ViveradoisPvRoute: ViveradoisPvRoute,
 }
 export const routeTree = rootRouteImport

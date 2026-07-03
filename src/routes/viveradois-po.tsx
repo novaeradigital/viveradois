@@ -3,7 +3,7 @@ import { Mail, Check, MessageCircle, Shield, AlertTriangle } from "lucide-react"
 import logo from "@/assets/logotipo.png.asset.json";
 import bgSunset from "@/assets/bg-sunset.webp.asset.json";
 
-export const Route = createFileRoute("/vad-obg")({
+export const Route = createFileRoute("/viveradois-po")({
   head: () => ({
     meta: [
       { title: "Obrigado — Viver a Dois" },
