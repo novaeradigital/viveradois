@@ -110,7 +110,7 @@ function Hero() {
           O relacionamento <span className="text-gradient-gold italic">não melhora</span> sozinho.
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-balance text-lg text-muted-foreground md:text-xl">
-          Ele melhora quando duas pessoas aprendem a construir a mesma direção.
+          Ele melhora quando duas pessoas aprendem a caminhar a mesma direção.
         </p>
         <div className="mx-auto mt-8 w-full max-w-3xl aspect-video rounded-2xl overflow-hidden border border-gold/30 shadow-[var(--shadow-gold)]">
           <iframe
