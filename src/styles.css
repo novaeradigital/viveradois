@@ -58,6 +58,12 @@
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
   --color-gold-deep: var(--gold-deep);
+  --color-bronze: var(--bronze);
+  --color-night: var(--night);
+  --color-coffee: var(--coffee);
+  --color-ink: var(--ink);
+  --color-ember: var(--ember);
+  --color-sand: var(--sand);
   --font-display: "Cormorant Garamond", serif;
   --font-sans: "Inter", sans-serif;
   --color-ring-offset-background: var(--background);
@@ -115,6 +121,12 @@
   --gold: oklch(0.78 0.11 82);
   --gold-soft: oklch(0.88 0.08 84);
   --gold-deep: oklch(0.58 0.10 70);
+  --bronze: #A6722A;
+  --night: #1A2A4A;
+  --coffee: #1E1208;
+  --ink: #0A0603;
+  --ember: #D4611A;
+  --sand: #C8A97A;
   --gradient-gold: linear-gradient(135deg, oklch(0.88 0.08 84), oklch(0.68 0.12 70));
   --shadow-gold: 0 20px 60px -20px oklch(0.78 0.11 82 / 0.45);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -221,3 +233,26 @@
   backdrop-filter: blur(12px);
   border: 1px solid color-mix(in srgb, var(--mapa-lavender) 60%, transparent);
 }
+
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 1.5rem;
+  animation: marquee-left 50s linear infinite;
+}
+.marquee-track.reverse {
+  animation-name: marquee-right;
+}
+.marquee-mask {
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+.marquee-track:hover { animation-play-state: paused; }
