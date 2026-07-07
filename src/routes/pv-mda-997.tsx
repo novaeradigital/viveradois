@@ -1145,11 +1145,6 @@ function SalesPage() {
               </details>
             ))}
           </div>
-          <div className="mt-12 flex justify-center">
-            <CTA variant="violet" href={WHATSAPP_URL}>
-              📲 Ficou com dúvida? Clique aqui e fale pelo WhatsApp
-            </CTA>
-          </div>
         </div>
       </section>
 
