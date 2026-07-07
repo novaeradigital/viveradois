@@ -9,6 +9,7 @@ import cddDep7 from "@/assets/cdd-dep-7.webp.asset.json";
 import cddDep8 from "@/assets/cdd-dep-8.webp.asset.json";
 import cddDep9 from "@/assets/cdd-dep-9.webp.asset.json";
 import cddDep10 from "@/assets/cdd-dep-10.webp.asset.json";
+import joaoRafaelImg from "@/assets/joao-rafael.png.asset.json";
 
 const TESTIMONIAL_IMAGES_ROW_1 = [cddDep1.url, cddDep2.url, cddDep3.url, cddDep7.url, cddDep9.url];
 const TESTIMONIAL_IMAGES_ROW_2 = [cddDep4.url, cddDep5.url, cddDep6.url, cddDep8.url, cddDep10.url];
@@ -1089,15 +1090,30 @@ function SalesPage() {
 
       {/* SOBRE JOÃO RAFAEL */}
       <section className="relative px-6 py-24 sm:py-32" style={{ backgroundColor: BRAND.cream }}>
-        <div className="relative mx-auto max-w-3xl">
+        <div className="relative mx-auto max-w-5xl">
           <SectionTitle eyebrow="Quem conduz o método">Sobre João Rafael</SectionTitle>
-          <Prose className="mt-10">
-            João Rafael é terapeuta integrativo e fundador do Instituto Nacional de Terapias
-            Integrativas. Ao longo de anos, acompanhou de perto dezenas de pessoas que
-            funcionavam bem por fora, mas se sentiam inseguras, cobradas e desconectadas por
-            dentro. Seu trabalho une psicologia, espiritualidade prática e respeito pelo
-            ritmo emocional de cada pessoa — sem julgamentos e sem fórmulas mágicas.
-          </Prose>
+          <div className="mt-12 grid items-center gap-10 md:grid-cols-[minmax(220px,320px)_1fr] md:gap-14">
+            <div className="mx-auto w-full max-w-[320px]">
+              <div
+                className="relative overflow-hidden rounded-3xl shadow-[0_25px_60px_-20px_rgba(123,63,189,0.5)]"
+                style={{ border: `2px solid ${BRAND.lavender}` }}
+              >
+                <img
+                  src={joaoRafaelImg.url}
+                  alt="João Rafael — terapeuta integrativo e fundador do Instituto Nacional de Terapias Integrativas"
+                  className="block h-auto w-full"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <Prose className="!mx-0 !text-left">
+              João Rafael é terapeuta integrativo e fundador do Instituto Nacional de Terapias
+              Integrativas. Ao longo de anos, acompanhou de perto dezenas de pessoas que
+              funcionavam bem por fora, mas se sentiam inseguras, cobradas e desconectadas por
+              dentro. Seu trabalho une psicologia, espiritualidade prática e respeito pelo
+              ritmo emocional de cada pessoa — sem julgamentos e sem fórmulas mágicas.
+            </Prose>
+          </div>
         </div>
       </section>
 
