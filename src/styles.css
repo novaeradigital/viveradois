@@ -66,6 +66,7 @@
   --color-sand: var(--sand);
   --font-display: "Cormorant Garamond", serif;
   --font-sans: "Inter", sans-serif;
+  --font-serif: "Fraunces", Georgia, serif;
   --color-ring-offset-background: var(--background);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
@@ -92,6 +93,17 @@
   --color-mapa-wine: var(--mapa-wine);
   --color-mapa-magenta: var(--mapa-magenta);
   --color-mapa-glow: var(--mapa-glow);
+
+  /* P.A. MdA — brand color utilities (bg-cream / text-raspberry / etc.) */
+  --color-cream: var(--pa-cream);
+  --color-sunset: var(--pa-sunset);
+  --color-lavender: var(--pa-lavender);
+  --color-pink: var(--pa-pink);
+  --color-raspberry: var(--pa-raspberry);
+  --color-violet: var(--pa-violet);
+  --color-wine: var(--pa-wine);
+  --color-glow: var(--pa-glow);
+  --color-lime: var(--pa-lime);
   --font-heading: "Plus Jakarta Sans", sans-serif;
   --font-body: "Poppins", sans-serif;
 }
@@ -154,6 +166,25 @@
   --mapa-wine: #6b1f4a;
   --mapa-magenta: #ec168f;
   --mapa-glow: #fff7c2;
+
+  /* P.A. MdA — raw brand palette + gradients (referenced via var() and utilities) */
+  --pa-cream: #fcf5eb;
+  --pa-sunset: #f5cd99;
+  --pa-lavender: #fbdae5;
+  --pa-pink: #f28bc0;
+  --pa-raspberry: #c53771;
+  --pa-violet: #8d3fc1;
+  --pa-wine: #3a0e26;
+  --pa-glow: #fff7c2;
+  --pa-lime: #d6f21f;
+  --cream: var(--pa-cream);
+  --wine: var(--pa-wine);
+  --gradient-rose: linear-gradient(135deg, #f28bc0 0%, #ec168f 55%, #c53771 100%);
+  --gradient-cream: linear-gradient(160deg, #fcf5eb 0%, #fbdae5 60%, #f28bc0 120%);
+  --gradient-sunset: linear-gradient(180deg, #f5cd99 0%, #fcf5eb 100%);
+  --gradient-purple-rose: linear-gradient(135deg, #7b3fbd 0%, #9638cc 50%, #c53771 100%);
+  --gradient-light: radial-gradient(closest-side, #fff7c2 0%, #f5cd99 40%, rgba(245,205,153,0) 75%);
+  --shadow-soft: 0 30px 80px -30px color-mix(in oklab, #c53771 35%, transparent);
 }
 
 .dark {
@@ -256,3 +287,12 @@
   -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 .marquee-track:hover { animation-play-state: paused; }
+
+/* P.A. MdA scoped font family overrides (only inside the /pa-mda route wrapper) */
+.pa-mda-root {
+  --font-display: "Nunito", system-ui, sans-serif;
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-sans: "Poppins", system-ui, sans-serif;
+  font-family: var(--font-sans);
+  color: var(--pa-wine);
+}
