@@ -322,6 +322,7 @@ function SalesPage() {
             style={{ fontFamily: F_DISPLAY }}
           >
             Você vive presa no{" "}
+            <br />
             <span style={{ color: BRAND.lime }}>CICLO DO NÃO MERECIMENTO</span>
           </h1>
           <p
