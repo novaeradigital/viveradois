@@ -295,4 +295,9 @@
   --font-sans: "Poppins", system-ui, sans-serif;
   font-family: var(--font-sans);
   color: var(--pa-wine);
+  /* Override global dark-theme foreground so text is readable on cream bg */
+  --foreground: oklch(0.22 0.07 350);
+  --background: var(--pa-cream);
+  --muted-foreground: oklch(0.45 0.05 350);
+  --border: oklch(0.9 0.03 30);
 }
