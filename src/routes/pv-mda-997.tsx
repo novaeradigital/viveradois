@@ -317,14 +317,8 @@ function SalesPage() {
           }}
         />
         <div className="relative mx-auto max-w-4xl text-center text-white">
-          <p
-            className="mb-6 text-xs font-bold uppercase tracking-[0.4em]"
-            style={{ color: BRAND.lime, fontFamily: F_HEADING, fontStyle: "italic" }}
-          >
-            Mapa da Autoestima
-          </p>
           <h1
-            className="text-4xl font-black leading-[1.02] sm:text-6xl md:text-7xl"
+            className="text-3xl font-black leading-[1.05] sm:text-5xl md:text-6xl"
             style={{ fontFamily: F_DISPLAY }}
           >
             Você vive presa no{" "}
