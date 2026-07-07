@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PartyPopper, Mail, Clock, Shield, HelpCircle, Smartphone } from "lucide-react";
+import { PartyPopper, Mail, Clock, Shield, Smartphone } from "lucide-react";
 
 export const Route = createFileRoute("/po-cdd")({
   head: () => ({
@@ -196,28 +196,6 @@ function ConfirmacaoPage() {
       </section>
 
       <hr className="mx-auto max-w-3xl border-border" />
-
-      {/* Precisa de ajuda? */}
-      <section className="px-6 py-16 sm:py-20 bg-secondary/30">
-        <div className="mx-auto max-w-3xl">
-          <div className="text-center">
-            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-              <HelpCircle className="h-6 w-6 text-primary" />
-            </div>
-            <h2 className="mt-6 font-serif text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-              Precisa de ajuda?
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
-              Se tiver dúvidas sobre acesso, login, liberação do conteúdo ou agendamento da consultoria, entre em contato pelo WhatsApp:
-            </p>
-            <div className="mt-8">
-              <button className="inline-flex items-center justify-center rounded-xl border border-primary bg-card px-8 py-4 text-base font-semibold text-primary shadow-sm transition-colors hover:bg-primary/5 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background">
-                SUPORTE NO WHATSAPP
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Footer spacer */}
       <div className="h-16 bg-secondary/30" />
