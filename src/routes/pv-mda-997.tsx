@@ -1,4 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
+import cddDep1 from "@/assets/cdd-dep-1.webp.asset.json";
+import cddDep2 from "@/assets/cdd-dep-2.webp.asset.json";
+import cddDep3 from "@/assets/cdd-dep-3.webp.asset.json";
+import cddDep4 from "@/assets/cdd-dep-4.webp.asset.json";
+import cddDep5 from "@/assets/cdd-dep-5.webp.asset.json";
+import cddDep6 from "@/assets/cdd-dep-6.webp.asset.json";
+
+const TESTIMONIAL_IMAGES_ROW_1 = [cddDep1.url, cddDep2.url, cddDep3.url];
+const TESTIMONIAL_IMAGES_ROW_2 = [cddDep4.url, cddDep5.url, cddDep6.url];
 
 const CHECKOUT_URL = "https://institutointi.ticto.club";
 const WHATSAPP_URL = "https://wa.me/5511999999999";
@@ -960,47 +969,35 @@ function SalesPage() {
       {/* DEPOIMENTOS */}
       <section className="relative px-6 py-24 sm:py-32" style={{ backgroundColor: BRAND.cream }}>
         <Bloom className="right-0 top-20 h-[400px] w-[400px] opacity-40" />
-        <div className="relative mx-auto max-w-5xl">
+        <div className="relative mx-auto max-w-6xl">
           <SectionTitle eyebrow="Histórias reais de transformação">Depoimentos</SectionTitle>
-          <div className="mt-14 grid gap-6 md:grid-cols-2">
-            {TESTIMONIALS.map((t) => (
-              <blockquote
-                key={t.name}
-                className="group relative overflow-hidden rounded-3xl bg-white p-8 shadow-[0_10px_40px_-20px_rgba(197,55,113,0.3)] transition hover:-translate-y-1"
-                style={{ border: `1px solid ${BRAND.lavender}` }}
-              >
-                <span
-                  aria-hidden
-                  className="absolute -right-4 -top-6 text-[110px] font-black leading-none opacity-15"
-                  style={{ color: BRAND.pink, fontFamily: F_HEADING }}
-                >
-                  “
-                </span>
-                <p
-                  className="relative text-base italic leading-relaxed sm:text-lg"
-                  style={{ color: "rgba(43,15,31,0.85)", fontFamily: F_HEADING }}
-                >
-                  {t.text}
-                </p>
-                <footer className="relative mt-6 flex items-center gap-3">
-                  <div
-                    className="flex h-10 w-10 items-center justify-center rounded-full text-sm font-black text-white"
-                    style={{ backgroundImage: GRADIENTS.pink, fontFamily: F_DISPLAY }}
-                  >
-                    {t.name.charAt(0)}
+          <div className="mt-14 space-y-6">
+            {[
+              { images: TESTIMONIAL_IMAGES_ROW_1, dir: "left" as const },
+              { images: TESTIMONIAL_IMAGES_ROW_2, dir: "right" as const },
+            ].map((row, idx) => {
+              const loop = [...row.images, ...row.images];
+              return (
+                <div key={idx} className="dep-marquee-mask overflow-hidden">
+                  <div className={`dep-marquee ${row.dir === "left" ? "dep-marquee-left" : "dep-marquee-right"}`}>
+                    {loop.map((src, i) => (
+                      <div
+                        key={`${idx}-${i}`}
+                        className="w-[280px] shrink-0 overflow-hidden rounded-3xl bg-white shadow-[0_10px_40px_-20px_rgba(197,55,113,0.3)] sm:w-[340px]"
+                        style={{ border: `1px solid ${BRAND.lavender}` }}
+                      >
+                        <img
+                          src={src}
+                          alt="Depoimento de aluna"
+                          loading="lazy"
+                          className="block h-auto w-full"
+                        />
+                      </div>
+                    ))}
                   </div>
-                  <div>
-                    <p
-                      className="text-sm font-bold sm:text-base"
-                      style={{ color: BRAND.raspberry, fontFamily: F_DISPLAY }}
-                    >
-                      {t.name}
-                    </p>
-                    <p className="text-xs text-neutral-500 sm:text-sm">{t.city}</p>
-                  </div>
-                </footer>
-              </blockquote>
-            ))}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

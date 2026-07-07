@@ -319,6 +319,32 @@
   box-shadow: 0 28px 70px -18px rgba(123, 63, 189, 0.85);
 }
 
+/* Depoimentos — marquee carrosséis */
+@keyframes dep-marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes dep-marquee-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+.dep-marquee {
+  display: flex;
+  width: max-content;
+  gap: 1.5rem;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+.dep-marquee-left { animation-name: dep-marquee-left; }
+.dep-marquee-right { animation-name: dep-marquee-right; }
+.dep-marquee-mask {
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+.dep-marquee-mask:hover .dep-marquee { animation-play-state: paused; }
+
 /* /po-cdd — scoped Mapa da Autoestima palette from the source project */
 .po-cdd-root {
   --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
