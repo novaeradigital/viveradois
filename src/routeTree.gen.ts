@@ -13,6 +13,7 @@ import { Route as ViveradoisPvRouteImport } from './routes/viveradois-pv'
 import { Route as ViveradoisPoRouteImport } from './routes/viveradois-po'
 import { Route as PvMda997RouteImport } from './routes/pv-mda-997'
 import { Route as PuMda497CddRouteImport } from './routes/pu-mda-497-cdd'
+import { Route as PoMda997RouteImport } from './routes/po-mda-997'
 import { Route as PoCddRouteImport } from './routes/po-cdd'
 import { Route as PaMdaRouteImport } from './routes/pa-mda'
 import { Route as MdaPv297RouteImport } from './routes/mda-pv-297'
@@ -38,6 +39,11 @@ const PvMda997Route = PvMda997RouteImport.update({
 const PuMda497CddRoute = PuMda497CddRouteImport.update({
   id: '/pu-mda-497-cdd',
   path: '/pu-mda-497-cdd',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoMda997Route = PoMda997RouteImport.update({
+  id: '/po-mda-997',
+  path: '/po-mda-997',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PoCddRoute = PoCddRouteImport.update({
@@ -78,6 +84,7 @@ export interface FileRoutesByFullPath {
   '/mda-pv-297': typeof MdaPv297Route
   '/pa-mda': typeof PaMdaRoute
   '/po-cdd': typeof PoCddRoute
+  '/po-mda-997': typeof PoMda997Route
   '/pu-mda-497-cdd': typeof PuMda497CddRoute
   '/pv-mda-997': typeof PvMda997Route
   '/viveradois-po': typeof ViveradoisPoRoute
@@ -90,6 +97,7 @@ export interface FileRoutesByTo {
   '/mda-pv-297': typeof MdaPv297Route
   '/pa-mda': typeof PaMdaRoute
   '/po-cdd': typeof PoCddRoute
+  '/po-mda-997': typeof PoMda997Route
   '/pu-mda-497-cdd': typeof PuMda497CddRoute
   '/pv-mda-997': typeof PvMda997Route
   '/viveradois-po': typeof ViveradoisPoRoute
@@ -103,6 +111,7 @@ export interface FileRoutesById {
   '/mda-pv-297': typeof MdaPv297Route
   '/pa-mda': typeof PaMdaRoute
   '/po-cdd': typeof PoCddRoute
+  '/po-mda-997': typeof PoMda997Route
   '/pu-mda-497-cdd': typeof PuMda497CddRoute
   '/pv-mda-997': typeof PvMda997Route
   '/viveradois-po': typeof ViveradoisPoRoute
@@ -117,6 +126,7 @@ export interface FileRouteTypes {
     | '/mda-pv-297'
     | '/pa-mda'
     | '/po-cdd'
+    | '/po-mda-997'
     | '/pu-mda-497-cdd'
     | '/pv-mda-997'
     | '/viveradois-po'
@@ -129,6 +139,7 @@ export interface FileRouteTypes {
     | '/mda-pv-297'
     | '/pa-mda'
     | '/po-cdd'
+    | '/po-mda-997'
     | '/pu-mda-497-cdd'
     | '/pv-mda-997'
     | '/viveradois-po'
@@ -141,6 +152,7 @@ export interface FileRouteTypes {
     | '/mda-pv-297'
     | '/pa-mda'
     | '/po-cdd'
+    | '/po-mda-997'
     | '/pu-mda-497-cdd'
     | '/pv-mda-997'
     | '/viveradois-po'
@@ -154,6 +166,7 @@ export interface RootRouteChildren {
   MdaPv297Route: typeof MdaPv297Route
   PaMdaRoute: typeof PaMdaRoute
   PoCddRoute: typeof PoCddRoute
+  PoMda997Route: typeof PoMda997Route
   PuMda497CddRoute: typeof PuMda497CddRoute
   PvMda997Route: typeof PvMda997Route
   ViveradoisPoRoute: typeof ViveradoisPoRoute
@@ -188,6 +201,13 @@ declare module '@tanstack/react-router' {
       path: '/pu-mda-497-cdd'
       fullPath: '/pu-mda-497-cdd'
       preLoaderRoute: typeof PuMda497CddRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/po-mda-997': {
+      id: '/po-mda-997'
+      path: '/po-mda-997'
+      fullPath: '/po-mda-997'
+      preLoaderRoute: typeof PoMda997RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/po-cdd': {
@@ -242,6 +262,7 @@ const rootRouteChildren: RootRouteChildren = {
   MdaPv297Route: MdaPv297Route,
   PaMdaRoute: PaMdaRoute,
   PoCddRoute: PoCddRoute,
+  PoMda997Route: PoMda997Route,
   PuMda497CddRoute: PuMda497CddRoute,
   PvMda997Route: PvMda997Route,
   ViveradoisPoRoute: ViveradoisPoRoute,
