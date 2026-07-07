@@ -323,7 +323,7 @@ function SalesPage() {
           >
             Você vive presa no{" "}
             <br />
-            <span style={{ color: BRAND.lime }}>CICLO DO NÃO MERECIMENTO</span>
+            <span style={{ color: BRAND.lime }}>CICLO DO NÃO <br /> MERECIMENTO</span>
           </h1>
           <p
             className="mx-auto mt-8 max-w-2xl text-xl leading-snug text-white/95 sm:text-2xl"
