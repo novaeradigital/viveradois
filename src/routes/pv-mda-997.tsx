@@ -1,4 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
+import cddDep1 from "@/assets/cdd-dep-1.webp.asset.json";
+import cddDep2 from "@/assets/cdd-dep-2.webp.asset.json";
+import cddDep3 from "@/assets/cdd-dep-3.webp.asset.json";
+import cddDep4 from "@/assets/cdd-dep-4.webp.asset.json";
+import cddDep5 from "@/assets/cdd-dep-5.webp.asset.json";
+import cddDep6 from "@/assets/cdd-dep-6.webp.asset.json";
+
+const TESTIMONIAL_IMAGES_ROW_1 = [cddDep1.url, cddDep2.url, cddDep3.url];
+const TESTIMONIAL_IMAGES_ROW_2 = [cddDep4.url, cddDep5.url, cddDep6.url];
 
 const CHECKOUT_URL = "https://institutointi.ticto.club";
 const WHATSAPP_URL = "https://wa.me/5511999999999";
