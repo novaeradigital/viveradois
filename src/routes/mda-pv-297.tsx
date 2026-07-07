@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 const CHECKOUT_URL = "https://checkout.ticto.app/O4BB0019F";
-const CHECKOUT_URL_ANNUAL = "https://checkout.ticto.app/O5E782838";
+const CHECKOUT_URL_ANNUAL = "https://lp.institutointi.com/pu-mda-497-cdd";
 
 // Mapa da Autoestima brand palette (scoped to this route)
 const BRAND = {
