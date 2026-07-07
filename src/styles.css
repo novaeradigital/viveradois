@@ -301,3 +301,29 @@
   --muted-foreground: oklch(0.45 0.05 350);
   --border: oklch(0.9 0.03 30);
 }
+
+/* /po-cdd — scoped Mapa da Autoestima palette from the source project */
+.po-cdd-root {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --background: #fcf5eb;
+  --foreground: #45122e;
+  --card: #fffaf3;
+  --card-foreground: #45122e;
+  --popover: #fffaf3;
+  --popover-foreground: #45122e;
+  --primary: #c53771;
+  --primary-foreground: #fcf5eb;
+  --secondary: #fbdae5;
+  --secondary-foreground: #7a1f4a;
+  --muted: #f6e7d6;
+  --muted-foreground: #8a5a72;
+  --accent: #f28bc0;
+  --accent-foreground: #45122e;
+  --border: #f0d9d0;
+  --input: #eccfd8;
+  --ring: #c53771;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
