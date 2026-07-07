@@ -73,7 +73,7 @@ function CTA({
   href?: string;
 }) {
   const base =
-    "group relative inline-flex w-full max-w-2xl items-center justify-center rounded-full px-8 py-5 text-center text-base font-extrabold uppercase tracking-wide transition hover:-translate-y-0.5 sm:text-lg";
+    "cta-btn group relative inline-flex w-full max-w-2xl items-center justify-center rounded-full px-8 py-5 text-center text-base font-extrabold uppercase tracking-wide transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:scale-[1.03] hover:-translate-y-1 active:scale-[0.97] active:translate-y-0.5 sm:text-lg";
 
   if (variant === "outline") {
     return (
@@ -81,7 +81,7 @@ function CTA({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className={`${base} border-2 bg-transparent`}
+        className={`${base} cta-outline border-2 bg-transparent`}
         style={{
           fontFamily: F_DISPLAY,
           borderColor: BRAND.raspberry,
@@ -96,15 +96,15 @@ function CTA({
   const bg = variant === "violet" ? GRADIENTS.violet : GRADIENTS.pink;
   const shadow =
     variant === "violet"
-      ? "0_20px_50px_-15px_rgba(123,63,189,0.7)"
-      : "0_20px_50px_-15px_rgba(197,55,113,0.7)";
+      ? "0 20px 50px -15px rgba(123,63,189,0.7)"
+      : "0 20px 50px -15px rgba(197,55,113,0.7)";
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`${base} text-white shadow-[${shadow}]`}
-      style={{ backgroundImage: bg, fontFamily: F_DISPLAY }}
+      className={`${base} ${variant === "violet" ? "cta-violet" : "cta-pink"} text-white`}
+      style={{ backgroundImage: bg, fontFamily: F_DISPLAY, boxShadow: shadow }}
     >
       <span className="relative z-10 text-balance leading-tight">{children}</span>
     </a>

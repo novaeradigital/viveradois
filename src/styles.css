@@ -302,6 +302,23 @@
   --border: oklch(0.9 0.03 30);
 }
 
+/* CTA button — firm hover / active animations */
+.cta-btn {
+  will-change: transform, box-shadow, filter;
+}
+.cta-btn:hover {
+  filter: brightness(1.08);
+}
+.cta-outline:hover {
+  box-shadow: 0 14px 45px -12px rgba(197, 55, 113, 0.5);
+}
+.cta-pink:hover {
+  box-shadow: 0 28px 70px -18px rgba(197, 55, 113, 0.85);
+}
+.cta-violet:hover {
+  box-shadow: 0 28px 70px -18px rgba(123, 63, 189, 0.85);
+}
+
 /* /po-cdd — scoped Mapa da Autoestima palette from the source project */
 .po-cdd-root {
   --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
