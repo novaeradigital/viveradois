@@ -9,6 +9,7 @@ import cddDep7 from "@/assets/cdd-dep-7.webp.asset.json";
 import cddDep8 from "@/assets/cdd-dep-8.webp.asset.json";
 import cddDep9 from "@/assets/cdd-dep-9.webp.asset.json";
 import cddDep10 from "@/assets/cdd-dep-10.webp.asset.json";
+import joaoRafaelImg from "@/assets/joao-rafael.png.asset.json";
 
 const TESTIMONIAL_IMAGES_ROW_1 = [cddDep1.url, cddDep2.url, cddDep3.url, cddDep7.url, cddDep9.url];
 const TESTIMONIAL_IMAGES_ROW_2 = [cddDep4.url, cddDep5.url, cddDep6.url, cddDep8.url, cddDep10.url];
