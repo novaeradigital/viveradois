@@ -319,6 +319,52 @@
   box-shadow: 0 28px 70px -18px rgba(123, 63, 189, 0.85);
 }
 
+/* Borda luminescente giratória dos CTAs */
+@property --cta-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes cta-ring-spin {
+  to { --cta-angle: 360deg; }
+}
+/* Fallback for browsers without @property support */
+@keyframes cta-ring-spin-fallback {
+  to { transform: rotate(360deg); }
+}
+.cta-btn { isolation: isolate; }
+.cta-btn::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 9999px;
+  padding: 3px;
+  background: conic-gradient(
+    from var(--cta-angle),
+    #f28bc0 0deg,
+    #ec168f 60deg,
+    #d6f21f 130deg,
+    #fff7c2 200deg,
+    #8d3fc1 270deg,
+    #f28bc0 360deg
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  animation: cta-ring-spin 4s linear infinite;
+  filter: drop-shadow(0 0 8px rgba(236, 22, 143, 0.55))
+          drop-shadow(0 0 14px rgba(214, 242, 31, 0.35));
+  z-index: 2;
+  pointer-events: none;
+}
+.cta-btn:hover::before {
+  animation-duration: 2s;
+  filter: drop-shadow(0 0 12px rgba(236, 22, 143, 0.75))
+          drop-shadow(0 0 20px rgba(214, 242, 31, 0.5));
+}
+
 /* Depoimentos — marquee carrosséis */
 @keyframes dep-marquee-left {
   0% { transform: translateX(0); }
