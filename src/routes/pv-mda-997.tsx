@@ -5,9 +5,13 @@ import cddDep3 from "@/assets/cdd-dep-3.webp.asset.json";
 import cddDep4 from "@/assets/cdd-dep-4.webp.asset.json";
 import cddDep5 from "@/assets/cdd-dep-5.webp.asset.json";
 import cddDep6 from "@/assets/cdd-dep-6.webp.asset.json";
+import cddDep7 from "@/assets/cdd-dep-7.webp.asset.json";
+import cddDep8 from "@/assets/cdd-dep-8.webp.asset.json";
+import cddDep9 from "@/assets/cdd-dep-9.webp.asset.json";
+import cddDep10 from "@/assets/cdd-dep-10.webp.asset.json";
 
-const TESTIMONIAL_IMAGES_ROW_1 = [cddDep1.url, cddDep2.url, cddDep3.url];
-const TESTIMONIAL_IMAGES_ROW_2 = [cddDep4.url, cddDep5.url, cddDep6.url];
+const TESTIMONIAL_IMAGES_ROW_1 = [cddDep1.url, cddDep2.url, cddDep3.url, cddDep7.url, cddDep9.url];
+const TESTIMONIAL_IMAGES_ROW_2 = [cddDep4.url, cddDep5.url, cddDep6.url, cddDep8.url, cddDep10.url];
 
 const CHECKOUT_URL = "https://institutointi.ticto.club";
 const WHATSAPP_URL = "https://wa.me/5511999999999";
