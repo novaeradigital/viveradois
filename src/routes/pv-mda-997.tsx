@@ -330,6 +330,15 @@ function SalesPage() {
           >
             se doando, se adaptando, tentando ser reconhecida… mas ainda se sentindo insuficiente.
           </p>
+          <div
+            className="mx-auto mt-8 aspect-video w-full max-w-3xl overflow-hidden rounded-2xl border-2 border-white/20 bg-black/30 backdrop-blur-sm"
+          >
+            <div className="flex h-full w-full items-center justify-center">
+              <p className="text-sm font-bold uppercase tracking-widest text-white/60">
+                VSL
+              </p>
+            </div>
+          </div>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg">
             Existe um padrão invisível que faz você acreditar que precisa merecer tudo o que
             recebe, inclusive o próprio valor. Esse ciclo tem causa. Tem lógica. E pode ser
