@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PartyPopper, Mail, Clock, Shield, HelpCircle, Smartphone } from "lucide-react";
+import { PartyPopper, Mail, Clock, Shield, Smartphone } from "lucide-react";
 
 export const Route = createFileRoute("/po-cdd")({
   head: () => ({
