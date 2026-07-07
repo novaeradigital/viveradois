@@ -225,12 +225,3 @@ function ConfirmacaoPage() {
     </div>
   );
 }
-import { createFileRoute } from '@tanstack/react-router'
-
-export const Route = createFileRoute('/po-cdd')({
-  component: RouteComponent,
-})
-
-function RouteComponent() {
-  return <div>Hello "/po-cdd"!</div>
-}
