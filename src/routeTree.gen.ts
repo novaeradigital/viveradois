@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ViveradoisPvRouteImport } from './routes/viveradois-pv'
 import { Route as ViveradoisPoRouteImport } from './routes/viveradois-po'
+import { Route as MdaPv297RouteImport } from './routes/mda-pv-297'
 import { Route as CddPvRouteImport } from './routes/cdd-pv'
 import { Route as CddPWebRouteImport } from './routes/cdd-p-web'
 import { Route as IndexRouteImport } from './routes/index'
@@ -23,6 +24,11 @@ const ViveradoisPvRoute = ViveradoisPvRouteImport.update({
 const ViveradoisPoRoute = ViveradoisPoRouteImport.update({
   id: '/viveradois-po',
   path: '/viveradois-po',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MdaPv297Route = MdaPv297RouteImport.update({
+  id: '/mda-pv-297',
+  path: '/mda-pv-297',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CddPvRoute = CddPvRouteImport.update({
@@ -45,6 +51,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/cdd-p-web': typeof CddPWebRoute
   '/cdd-pv': typeof CddPvRoute
+  '/mda-pv-297': typeof MdaPv297Route
   '/viveradois-po': typeof ViveradoisPoRoute
   '/viveradois-pv': typeof ViveradoisPvRoute
 }
@@ -52,6 +59,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cdd-p-web': typeof CddPWebRoute
   '/cdd-pv': typeof CddPvRoute
+  '/mda-pv-297': typeof MdaPv297Route
   '/viveradois-po': typeof ViveradoisPoRoute
   '/viveradois-pv': typeof ViveradoisPvRoute
 }
@@ -60,6 +68,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/cdd-p-web': typeof CddPWebRoute
   '/cdd-pv': typeof CddPvRoute
+  '/mda-pv-297': typeof MdaPv297Route
   '/viveradois-po': typeof ViveradoisPoRoute
   '/viveradois-pv': typeof ViveradoisPvRoute
 }
@@ -69,15 +78,23 @@ export interface FileRouteTypes {
     | '/'
     | '/cdd-p-web'
     | '/cdd-pv'
+    | '/mda-pv-297'
     | '/viveradois-po'
     | '/viveradois-pv'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/cdd-p-web' | '/cdd-pv' | '/viveradois-po' | '/viveradois-pv'
+  to:
+    | '/'
+    | '/cdd-p-web'
+    | '/cdd-pv'
+    | '/mda-pv-297'
+    | '/viveradois-po'
+    | '/viveradois-pv'
   id:
     | '__root__'
     | '/'
     | '/cdd-p-web'
     | '/cdd-pv'
+    | '/mda-pv-297'
     | '/viveradois-po'
     | '/viveradois-pv'
   fileRoutesById: FileRoutesById
@@ -86,6 +103,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CddPWebRoute: typeof CddPWebRoute
   CddPvRoute: typeof CddPvRoute
+  MdaPv297Route: typeof MdaPv297Route
   ViveradoisPoRoute: typeof ViveradoisPoRoute
   ViveradoisPvRoute: typeof ViveradoisPvRoute
 }
@@ -104,6 +122,13 @@ declare module '@tanstack/react-router' {
       path: '/viveradois-po'
       fullPath: '/viveradois-po'
       preLoaderRoute: typeof ViveradoisPoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mda-pv-297': {
+      id: '/mda-pv-297'
+      path: '/mda-pv-297'
+      fullPath: '/mda-pv-297'
+      preLoaderRoute: typeof MdaPv297RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cdd-pv': {
@@ -134,19 +159,10 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CddPWebRoute: CddPWebRoute,
   CddPvRoute: CddPvRoute,
+  MdaPv297Route: MdaPv297Route,
   ViveradoisPoRoute: ViveradoisPoRoute,
   ViveradoisPvRoute: ViveradoisPvRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
