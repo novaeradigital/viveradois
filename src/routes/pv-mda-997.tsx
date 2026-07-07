@@ -1090,15 +1090,30 @@ function SalesPage() {
 
       {/* SOBRE JOÃO RAFAEL */}
       <section className="relative px-6 py-24 sm:py-32" style={{ backgroundColor: BRAND.cream }}>
-        <div className="relative mx-auto max-w-3xl">
+        <div className="relative mx-auto max-w-5xl">
           <SectionTitle eyebrow="Quem conduz o método">Sobre João Rafael</SectionTitle>
-          <Prose className="mt-10">
-            João Rafael é terapeuta integrativo e fundador do Instituto Nacional de Terapias
-            Integrativas. Ao longo de anos, acompanhou de perto dezenas de pessoas que
-            funcionavam bem por fora, mas se sentiam inseguras, cobradas e desconectadas por
-            dentro. Seu trabalho une psicologia, espiritualidade prática e respeito pelo
-            ritmo emocional de cada pessoa — sem julgamentos e sem fórmulas mágicas.
-          </Prose>
+          <div className="mt-12 grid items-center gap-10 md:grid-cols-[minmax(220px,320px)_1fr] md:gap-14">
+            <div className="mx-auto w-full max-w-[320px]">
+              <div
+                className="relative overflow-hidden rounded-3xl shadow-[0_25px_60px_-20px_rgba(123,63,189,0.5)]"
+                style={{ border: `2px solid ${BRAND.lavender}` }}
+              >
+                <img
+                  src={joaoRafaelImg.url}
+                  alt="João Rafael — terapeuta integrativo e fundador do Instituto Nacional de Terapias Integrativas"
+                  className="block h-auto w-full"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <Prose className="!mx-0 !text-left">
+              João Rafael é terapeuta integrativo e fundador do Instituto Nacional de Terapias
+              Integrativas. Ao longo de anos, acompanhou de perto dezenas de pessoas que
+              funcionavam bem por fora, mas se sentiam inseguras, cobradas e desconectadas por
+              dentro. Seu trabalho une psicologia, espiritualidade prática e respeito pelo
+              ritmo emocional de cada pessoa — sem julgamentos e sem fórmulas mágicas.
+            </Prose>
+          </div>
         </div>
       </section>
 
