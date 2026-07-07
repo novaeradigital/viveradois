@@ -893,7 +893,7 @@ function SalesPage() {
                   className="mt-3 text-4xl font-black leading-tight sm:text-5xl"
                   style={{ fontFamily: F_DISPLAY, color: "#fff" }}
                 >
-                  por <span style={{ color: BRAND.lime }}>R$ 997,00</span>
+                  por <span style={{ color: BRAND.lime }}><br />R$ 997,00</span>
                 </h3>
                 <p className="mt-2 text-sm font-semibold uppercase tracking-widest text-white/80">
                   por tempo limitado
