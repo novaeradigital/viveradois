@@ -14,7 +14,7 @@ import joaoRafaelImg from "@/assets/joao-rafael.png.asset.json";
 const TESTIMONIAL_IMAGES_ROW_1 = [cddDep1.url, cddDep2.url, cddDep3.url, cddDep7.url, cddDep9.url];
 const TESTIMONIAL_IMAGES_ROW_2 = [cddDep4.url, cddDep5.url, cddDep6.url, cddDep8.url, cddDep10.url];
 
-const CHECKOUT_URL = "https://institutointi.ticto.club";
+const CHECKOUT_URL = "https://checkout.ticto.app/O7380A6BB";
 const WHATSAPP_URL = "https://wa.me/5511999999999";
 
 const BRAND = {
