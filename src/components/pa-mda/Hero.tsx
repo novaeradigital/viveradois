@@ -59,21 +59,10 @@ export function Hero() {
             style={{ background: "var(--gradient-light)" }}
           />
           <div
-            className="relative aspect-video w-full overflow-hidden rounded-3xl border border-white/60 shadow-[var(--shadow-soft)]"
+            ref={videoRef}
+            className="relative w-full overflow-hidden rounded-3xl border border-white/60 shadow-[var(--shadow-soft)]"
             style={{ background: "var(--gradient-purple-rose)" }}
-          >
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white/95 shadow-2xl">
-                <Play className="h-8 w-8 translate-x-0.5 fill-raspberry text-raspberry" />
-              </div>
-              <p className="mt-5 px-6 font-display text-sm font-semibold uppercase tracking-[0.2em] text-white/90">
-                Sua masterclass está pronta
-              </p>
-              <p className="mt-2 px-6 font-serif text-xs italic text-white/70">
-                [ VSL 1 — Mapa da Autoestima / Sorteio ]
-              </p>
-            </div>
-          </div>
+          />
         </div>
 
         <p className="mx-auto mt-12 max-w-2xl text-center font-sans text-base leading-relaxed text-wine/75 sm:text-lg">
