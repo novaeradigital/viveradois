@@ -1,4 +1,5 @@
-import { Play, Sparkles } from "lucide-react";
+import { useEffect, useRef } from "react";
+import { Sparkles } from "lucide-react";
 import { CtaButton } from "./CtaButton";
 
 export function Hero() {
