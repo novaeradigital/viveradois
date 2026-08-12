@@ -28,17 +28,6 @@ import depoimento8Asset from "@/assets/cdd-depoimento-8.webp.asset.json";
 import depoimento9Asset from "@/assets/cdd-depoimento-9.webp.asset.json";
 import depoimento10Asset from "@/assets/cdd-depoimento-10.webp.asset.json";
 
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      "vturb-smartplayer": React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement>,
-        HTMLElement
-      >;
-    }
-  }
-}
-
 export const Route = createFileRoute("/cdd-pv")({
   head: () => ({
     meta: [
