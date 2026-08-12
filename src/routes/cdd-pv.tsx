@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import {
@@ -57,6 +58,46 @@ const fadeUp = {
   transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
 };
 
+function VTurbPlayer() {
+  useEffect(() => {
+    const existing = document.querySelector(
+      'script[data-vturb-player="6a7cbea69ce229b9e74427d4"]'
+    );
+    if (existing) return;
+
+    const s = document.createElement("script");
+    s.src =
+      "https://scripts.converteai.net/5e971d8f-4dc9-4092-90b8-55044e7b18bc/players/6a7cbea69ce229b9e74427d4/v4/player.js";
+    s.async = true;
+    s.dataset.vturbPlayer = "6a7cbea69ce229b9e74427d4";
+    document.head.appendChild(s);
+
+    return () => {
+      s.remove();
+    };
+  }, []);
+
+  const VTurbTag = "vturb-smartplayer" as unknown as React.FC<any>;
+
+  return (
+    <VTurbTag
+      id="vid-6a7cbea69ce229b9e74427d4"
+      style={{ display: "block", margin: "0 auto", width: "100%", height: "100%" }}
+    >
+      <div
+        className="vturb-player-placeholder"
+        style={{
+          position: "relative",
+          width: "100%",
+          padding: "56.25% 0 0",
+          zIndex: 0,
+          backgroundColor: "black",
+        }}
+      />
+    </VTurbTag>
+  );
+}
+
 function Index() {
   return (
     <main className="min-h-screen bg-ink font-sans text-[#F1E7D4] antialiased selection:bg-gold/40 selection:text-ink">
@@ -104,25 +145,7 @@ function Hero() {
 
           <div className="mx-auto mt-10 w-full max-w-3xl">
             <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-gold/20 bg-[#0F0A07] shadow-[0_30px_80px_-30px_rgba(201,151,58,0.35)]">
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full border border-gold/40 bg-gold/10 backdrop-blur-sm transition-transform hover:scale-105">
-                  <svg className="ml-1 h-6 w-6 text-gold" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-                <p className="text-sm uppercase tracking-[0.2em] text-gold-soft/80">
-                  Assista ao vídeo acima
-                </p>
-              </div>
-              <div className="absolute inset-0 -z-10 opacity-30">
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background:
-                      "radial-gradient(circle at 50% 50%, rgba(201,151,58,0.25), transparent 70%)",
-                  }}
-                />
-              </div>
+              <VTurbPlayer />
             </div>
           </div>
 
