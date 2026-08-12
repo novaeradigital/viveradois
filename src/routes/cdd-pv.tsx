@@ -77,8 +77,10 @@ function VTurbPlayer() {
     };
   }, []);
 
+  const VTurbTag = "vturb-smartplayer" as unknown as React.FC<any>;
+
   return (
-    <vturb-smartplayer
+    <VTurbTag
       id="vid-6a7cbea69ce229b9e74427d4"
       style={{ display: "block", margin: "0 auto", width: "100%", height: "100%" }}
     >
@@ -92,7 +94,7 @@ function VTurbPlayer() {
           backgroundColor: "black",
         }}
       />
-    </vturb-smartplayer>
+    </VTurbTag>
   );
 }
 
