@@ -104,25 +104,7 @@ function Hero() {
 
           <div className="mx-auto mt-10 w-full max-w-3xl">
             <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-gold/20 bg-[#0F0A07] shadow-[0_30px_80px_-30px_rgba(201,151,58,0.35)]">
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full border border-gold/40 bg-gold/10 backdrop-blur-sm transition-transform hover:scale-105">
-                  <svg className="ml-1 h-6 w-6 text-gold" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-                <p className="text-sm uppercase tracking-[0.2em] text-gold-soft/80">
-                  Assista ao vídeo acima
-                </p>
-              </div>
-              <div className="absolute inset-0 -z-10 opacity-30">
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background:
-                      "radial-gradient(circle at 50% 50%, rgba(201,151,58,0.25), transparent 70%)",
-                  }}
-                />
-              </div>
+              <VTurbPlayer />
             </div>
           </div>
 
