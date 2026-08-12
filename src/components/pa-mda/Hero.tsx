@@ -1,7 +1,22 @@
-import { Play, Sparkles } from "lucide-react";
+import { useEffect, useRef } from "react";
+import { Sparkles } from "lucide-react";
 import { CtaButton } from "./CtaButton";
 
 export function Hero() {
+  const videoRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!videoRef.current) return;
+    videoRef.current.innerHTML = `<vturb-smartplayer id="vid-6a7cc0a87d249b839f63eaf1" style="display: block; margin: 0 auto; width: 100%;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 56.25% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>`;
+    const s = document.createElement("script");
+    s.src = "https://scripts.converteai.net/5e971d8f-4dc9-4092-90b8-55044e7b18bc/players/6a7cc0a87d249b839f63eaf1/v4/player.js";
+    s.async = true;
+    document.head.appendChild(s);
+    return () => {
+      document.head.removeChild(s);
+    };
+  }, []);
+
   return (
     <section className="relative overflow-hidden bg-cream">
       <div
@@ -44,21 +59,10 @@ export function Hero() {
             style={{ background: "var(--gradient-light)" }}
           />
           <div
-            className="relative aspect-video w-full overflow-hidden rounded-3xl border border-white/60 shadow-[var(--shadow-soft)]"
+            ref={videoRef}
+            className="relative w-full overflow-hidden rounded-3xl border border-white/60 shadow-[var(--shadow-soft)]"
             style={{ background: "var(--gradient-purple-rose)" }}
-          >
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white/95 shadow-2xl">
-                <Play className="h-8 w-8 translate-x-0.5 fill-raspberry text-raspberry" />
-              </div>
-              <p className="mt-5 px-6 font-display text-sm font-semibold uppercase tracking-[0.2em] text-white/90">
-                Sua masterclass está pronta
-              </p>
-              <p className="mt-2 px-6 font-serif text-xs italic text-white/70">
-                [ VSL 1 — Mapa da Autoestima / Sorteio ]
-              </p>
-            </div>
-          </div>
+          />
         </div>
 
         <p className="mx-auto mt-12 max-w-2xl text-center font-sans text-base leading-relaxed text-wine/75 sm:text-lg">
