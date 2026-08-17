@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useRef } from "react";
 import cddDep1 from "@/assets/cdd-dep-1.webp.asset.json";
 import cddDep2 from "@/assets/cdd-dep-2.webp.asset.json";
 import cddDep3 from "@/assets/cdd-dep-3.webp.asset.json";
@@ -305,6 +306,20 @@ const FAQ = [
 ];
 
 function SalesPage() {
+  const videoRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!videoRef.current) return;
+    videoRef.current.innerHTML = `<vturb-smartplayer id="vid-6a831b98d46da2e77f9cb8d8" style="display: block; margin: 0 auto; width: 100%; "><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 56.25% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>`;
+    const s = document.createElement("script");
+    s.src = "https://scripts.converteai.net/5e971d8f-4dc9-4092-90b8-55044e7b18bc/players/6a831b98d46da2e77f9cb8d8/v4/player.js";
+    s.async = true;
+    document.head.appendChild(s);
+    return () => {
+      document.head.removeChild(s);
+    };
+  }, []);
+
   return (
     <main
       className="min-h-screen overflow-hidden"
@@ -346,14 +361,9 @@ function SalesPage() {
             se doando, se adaptando, tentando ser reconhecida… mas ainda se sentindo insuficiente.
           </p>
           <div
+            ref={videoRef}
             className="mx-auto mt-8 aspect-video w-full max-w-3xl overflow-hidden rounded-2xl border-2 border-white/20 bg-black/30 backdrop-blur-sm"
-          >
-            <div className="flex h-full w-full items-center justify-center">
-              <p className="text-sm font-bold uppercase tracking-widest text-white/60">
-                VSL
-              </p>
-            </div>
-          </div>
+          />
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg">
             Existe um padrão invisível que faz você acreditar que precisa merecer tudo o que
             recebe, inclusive o próprio valor. Esse ciclo tem causa. Tem lógica. E pode ser
