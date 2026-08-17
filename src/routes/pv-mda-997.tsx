@@ -306,6 +306,20 @@ const FAQ = [
 ];
 
 function SalesPage() {
+  const videoRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!videoRef.current) return;
+    videoRef.current.innerHTML = `<vturb-smartplayer id="vid-6a831b98d46da2e77f9cb8d8" style="display: block; margin: 0 auto; width: 100%; "><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 56.25% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>`;
+    const s = document.createElement("script");
+    s.src = "https://scripts.converteai.net/5e971d8f-4dc9-4092-90b8-55044e7b18bc/players/6a831b98d46da2e77f9cb8d8/v4/player.js";
+    s.async = true;
+    document.head.appendChild(s);
+    return () => {
+      document.head.removeChild(s);
+    };
+  }, []);
+
   return (
     <main
       className="min-h-screen overflow-hidden"
