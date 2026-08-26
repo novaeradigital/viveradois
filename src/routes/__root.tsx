@@ -130,6 +130,15 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
+  useEffect(() => {
+    if (document.getElementById("metrito-tracking")) return;
+    const s = document.createElement("script");
+    s.id = "metrito-tracking";
+    s.async = true;
+    s.text = `!(function(t,r,a,c,k,i,n,g){a="mtrt";c="script";k=window;i=document;n=new URL(location);g=n.searchParams;if(k[a])return;t="/"+a+"tag.js?id="+(g.get(a+"id")||t);n.host="sst."+n.host.replace(/^w{3}./i,"");[g.get(a+"url")||n.origin].concat(r).reduce(function(w,x){return w.catch(x?new Promise(function(y,z){n=i.createElement(c);n.src=x+t;n.async=!0;n.onload=y;n.onerror=z;g=i.getElementsByTagName(c)[0];g.parentNode.insertBefore(n,g)}):Promise.reject())},Promise.reject());a=k[a]=function(){a.track?a.track.apply(a,arguments):a.queue.push(arguments)};a.ver=1;a.queue=[];k.metrito||(k.metrito=a)})("MTC-GR3FAUY",["https://api.metrito.com/v2"]);`;
+    document.head.appendChild(s);
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
