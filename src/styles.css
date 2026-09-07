@@ -8,6 +8,9 @@
 @import "@fontsource/plus-jakarta-sans/400.css";
 @import "@fontsource/plus-jakarta-sans/500.css";
 @import "@fontsource/plus-jakarta-sans/600.css";
+@import "@fontsource/cormorant-garamond/500.css";
+@import "@fontsource/cormorant-garamond/600.css";
+@import "@fontsource/cormorant-garamond/700.css";
 @import "@fontsource/poppins/400.css";
 @import "@fontsource/poppins/500.css";
 @import "@fontsource/poppins/600.css";
@@ -104,6 +107,12 @@
   --color-wine: var(--pa-wine);
   --color-glow: var(--pa-glow);
   --color-lime: var(--pa-lime);
+  /* Masterclass "A Coragem de se Escolher" */
+  --color-cor-black: var(--cor-black);
+  --color-cor-brown: var(--cor-brown);
+  --color-cor-gold: var(--cor-gold);
+  --color-cor-amber: var(--cor-amber);
+  --color-cor-cream: var(--cor-cream);
   --font-heading: "Plus Jakarta Sans", sans-serif;
   --font-body: "Poppins", sans-serif;
 }
@@ -184,6 +193,11 @@
   --gradient-sunset: linear-gradient(180deg, #f5cd99 0%, #fcf5eb 100%);
   --gradient-purple-rose: linear-gradient(135deg, #7b3fbd 0%, #9638cc 50%, #c53771 100%);
   --gradient-light: radial-gradient(closest-side, #fff7c2 0%, #f5cd99 40%, rgba(245,205,153,0) 75%);
+  --cor-black: #0a0705;
+  --cor-brown: #1c1209;
+  --cor-gold: #c9973f;
+  --cor-amber: #f2c14e;
+  --cor-cream: #f7f1e6;
   --shadow-soft: 0 30px 80px -30px color-mix(in oklab, #c53771 35%, transparent);
 }
 
@@ -415,4 +429,29 @@
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+/* ── Masterclass "A Coragem de se Escolher" (/acoragemdeseescolher) ── */
+.coragem-root {
+  --font-serif-mc: "Cormorant Garamond", Georgia, serif;
+  --font-sans-mc: "Plus Jakarta Sans", system-ui, sans-serif;
+  background-color: var(--cor-black);
+  color: var(--cor-cream);
+  font-family: var(--font-sans-mc);
+}
+.coragem-root .mc-serif { font-family: var(--font-serif-mc); letter-spacing: 0.01em; }
+.coragem-root .mc-gold-line {
+  background: linear-gradient(90deg, transparent, var(--cor-gold), transparent);
+  height: 1px;
+}
+.mc-sunset {
+  background:
+    radial-gradient(80% 60% at 75% 20%, rgba(242,193,78,0.22), transparent 65%),
+    radial-gradient(70% 50% at 10% 90%, rgba(201,151,63,0.14), transparent 70%),
+    linear-gradient(180deg, #0a0705 0%, #1c1209 55%, #0a0705 100%);
+}
+.mc-reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.mc-reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .mc-reveal { opacity: 1; transform: none; transition: none; }
 }
