@@ -19,6 +19,7 @@ import { Route as PaMdaRouteImport } from './routes/pa-mda'
 import { Route as MdaPv297RouteImport } from './routes/mda-pv-297'
 import { Route as CddPvRouteImport } from './routes/cdd-pv'
 import { Route as CddPWebRouteImport } from './routes/cdd-p-web'
+import { Route as AcoragemdeseescolherRouteImport } from './routes/acoragemdeseescolher'
 import { Route as IndexRouteImport } from './routes/index'
 
 const ViveradoisPvRoute = ViveradoisPvRouteImport.update({
@@ -71,6 +72,11 @@ const CddPWebRoute = CddPWebRouteImport.update({
   path: '/cdd-p-web',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AcoragemdeseescolherRoute = AcoragemdeseescolherRouteImport.update({
+  id: '/acoragemdeseescolher',
+  path: '/acoragemdeseescolher',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -79,6 +85,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/acoragemdeseescolher': typeof AcoragemdeseescolherRoute
   '/cdd-p-web': typeof CddPWebRoute
   '/cdd-pv': typeof CddPvRoute
   '/mda-pv-297': typeof MdaPv297Route
@@ -92,6 +99,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/acoragemdeseescolher': typeof AcoragemdeseescolherRoute
   '/cdd-p-web': typeof CddPWebRoute
   '/cdd-pv': typeof CddPvRoute
   '/mda-pv-297': typeof MdaPv297Route
@@ -106,6 +114,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/acoragemdeseescolher': typeof AcoragemdeseescolherRoute
   '/cdd-p-web': typeof CddPWebRoute
   '/cdd-pv': typeof CddPvRoute
   '/mda-pv-297': typeof MdaPv297Route
@@ -121,6 +130,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/acoragemdeseescolher'
     | '/cdd-p-web'
     | '/cdd-pv'
     | '/mda-pv-297'
@@ -134,6 +144,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/acoragemdeseescolher'
     | '/cdd-p-web'
     | '/cdd-pv'
     | '/mda-pv-297'
@@ -147,6 +158,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/acoragemdeseescolher'
     | '/cdd-p-web'
     | '/cdd-pv'
     | '/mda-pv-297'
@@ -161,6 +173,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AcoragemdeseescolherRoute: typeof AcoragemdeseescolherRoute
   CddPWebRoute: typeof CddPWebRoute
   CddPvRoute: typeof CddPvRoute
   MdaPv297Route: typeof MdaPv297Route
@@ -245,6 +258,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CddPWebRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/acoragemdeseescolher': {
+      id: '/acoragemdeseescolher'
+      path: '/acoragemdeseescolher'
+      fullPath: '/acoragemdeseescolher'
+      preLoaderRoute: typeof AcoragemdeseescolherRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -257,6 +277,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AcoragemdeseescolherRoute: AcoragemdeseescolherRoute,
   CddPWebRoute: CddPWebRoute,
   CddPvRoute: CddPvRoute,
   MdaPv297Route: MdaPv297Route,
