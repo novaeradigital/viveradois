@@ -1,0 +1,2 @@
+- [ ] Finalizar e validar a landing page /acoragemdeseescolher
+- [ ] Diagnosticar e orientar a correção do erro de clonagem do repositório no Cloudflare
